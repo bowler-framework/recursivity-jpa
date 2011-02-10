@@ -5,7 +5,7 @@ class JpaProject(info: ProjectInfo) extends DefaultProject(info){
 	
 	val hibernateEntityManager = "org.hibernate" % "hibernate-entitymanager" % "3.5.1-Final"
 	
-	val recursivityCommons = "com.recursivity" % "recursivity-commons_2.8.1" % "0.4-SNAPSHOT"
+//	val recursivityCommons = "com.recursivity" % "recursivity-commons_2.8.1" % "0.4-SNAPSHOT"
 
 
   val sfl4japi = "org.slf4j" % "slf4j-api" % slf4jVersion

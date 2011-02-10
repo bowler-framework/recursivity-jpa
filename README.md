@@ -15,4 +15,15 @@ It would however be greatly appreciated if someone would want to contribute mult
 Set up your JPA beans and persistence-units in your persistence.xml as you would normally.
 If you want the "Jpa.entityManager" to return a valid EntityManager without having to pass the name of the persistence-unit you want to access by default, do the following:
 	PersistenceUnit.unitName = "mypersistenceUnitName"
+In places where you want to access JPA functionality easily, you just add the following import:
+	import com.recursivity.jpa.Jpa._
+To start a transaction/JPA persistence context, you do the following:
+	transaction{
+		..your code within the transaction/persistence context goes here..
+	}
+To get an EntityManager and access all JPA goodness anywhere in your code that runs within the above transaction block, including instances which are only indirectly called from the transaction block, simply have the import previously mentioned in your code and do the following:
+	val em = entityManager // gets an EntityManager for the default persistence-unit we set in the PersistenceUnit.unitName
+	..or:
+	val em = entityManager("someOtherPersistenceUnit") // to retrieved a specific named persistence-unit defined in your persistence.xml
+..and that's about it! Enjoy!
 

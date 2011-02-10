@@ -13,4 +13,6 @@ It would however be greatly appreciated if someone would want to contribute mult
 
 ## Usage
 Set up your JPA beans and persistence-units in your persistence.xml as you would normally.
+If you want the "Jpa.entityManager" to return a valid EntityManager without having to pass the name of the persistence-unit you want to access by default, do the following:
+	PersistenceUnit.unitName = "mypersistenceUnitName"
 

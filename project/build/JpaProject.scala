@@ -3,13 +3,13 @@ import sbt._
 class JpaProject(info: ProjectInfo) extends DefaultProject(info){
   val slf4jVersion = "1.6.0"
 	
-	val hibernateEntityManager = "org.hibernate" % "hibernate-entitymanager" % "3.5.1-Final"
+	val hibernateEntityManager = "org.hibernate" % "hibernate-entitymanager" % "3.5.1-Final" % "provided"
 	
 //	val recursivityCommons = "com.recursivity" % "recursivity-commons_2.8.1" % "0.4-SNAPSHOT"
 
 
-  val sfl4japi = "org.slf4j" % "slf4j-api" % slf4jVersion
-  val sfl4jnop = "org.slf4j" % "slf4j-nop" % slf4jVersion % "runtime"
+  val sfl4japi = "org.slf4j" % "slf4j-api" % slf4jVersion % "provided"
+  val sfl4jnop = "org.slf4j" % "slf4j-nop" % slf4jVersion % "provided"
 	
 	val hsqldb = "hsqldb" % "hsqldb" % "1.8.0.7" % "test"
 	

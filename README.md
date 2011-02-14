@@ -11,6 +11,12 @@ It would however be greatly appreciated if someone would want to contribute mult
 * No connection will be retrieved or actual transaction started until the first access of an actual EntityManager = excellent scalability, only use DB resources when they actually need to be used.
 * Manages multiple JPA persistence-units (though does not do multi-phase commit, only commits all open transactions in some order, or rollsback those transactions that have yet to be committed.
 
+## Maven/SBT setup
+MVN/SBT repo: 
+	https://oss.sonatype.org/content/repositories/releases
+Dependency definition (sbt): 
+	"com.recursivity" % "recursivity-jpa_2.8.1" % "1.0"
+
 ## Usage
 Set up your JPA beans and persistence-units in your persistence.xml as you would normally.
 If you want the "Jpa.entityManager" to return a valid EntityManager without having to pass the name of the persistence-unit you want to access by default, do the following:

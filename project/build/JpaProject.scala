@@ -3,19 +3,21 @@ import sbt._
 class JpaProject(info: ProjectInfo) extends DefaultProject(info){//} with ChecksumPlugin{	
   val slf4jVersion = "1.6.0"
 	
-	val hibernateEntityManager = "org.hibernate" % "hibernate-entitymanager" % "3.5.1-Final" % "provided"
-	
-//	val recursivityCommons = "com.recursivity" % "recursivity-commons_2.8.1" % "0.4-SNAPSHOT"
+  val hibernateEntityManager = "org.hibernate" % "hibernate-entitymanager" % "3.6.1.Final" % "provided"
 
 
   val sfl4japi = "org.slf4j" % "slf4j-api" % slf4jVersion % "provided"
   val sfl4jnop = "org.slf4j" % "slf4j-nop" % slf4jVersion % "provided"
 	
-	val hsqldb = "hsqldb" % "hsqldb" % "1.8.0.7" % "test"
+  val hsqldb = "hsqldb" % "hsqldb" % "1.8.0.7" % "test"
 	
-	val scalatest = "org.scalatest" % "scalatest" %
-	    "1.2" % "test"
-	val jbossRepo = "JBoss repo" at "http://repository.jboss.com/maven2/"
+  val scalatest = {
+    if(buildScalaVersion.contains("2.9"))
+      "org.scalatest" %% "scalatest" % "1.4.1" % "test"
+    else
+      "org.scalatest" % "scalatest" % "1.3" % "test"
+  }
+  val jbossRepo = "JBoss repo" at "https://repository.jboss.org/nexus/content/repositories/releases/"
 	
 	
 	 Credentials(Path.userHome / ".ivy2" / ".credentials", log)

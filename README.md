@@ -17,7 +17,7 @@ MVN/SBT repo:
 Dependency definition (sbt): 
 	"com.recursivity" % "recursivity-jpa_2.8.1" % "1.0"
 As different people might want to use different JPA providers, a default is not given. If you want to add Hibernate as your provided, you should add the following dependencies:
-	val hibernateEntityManager = "org.hibernate" % "hibernate-entitymanager" % "3.5.1-Final"
+	val hibernateEntityManager = "org.hibernate" % "hibernate-entitymanager" % "3.6.1.Final"
 	val jbossRepo = "JBoss repo" at "http://repository.jboss.com/maven2/"
 	val sfl4japi = "org.slf4j" % "slf4j-api" % "1.6.0"
 	val sfl4jnop = "org.slf4j" % "slf4j-nop" % "1.6.0"
